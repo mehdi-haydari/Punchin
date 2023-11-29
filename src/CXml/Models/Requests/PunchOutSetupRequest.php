@@ -18,7 +18,7 @@ class PunchOutSetupRequest implements RequestInterface
     {
         $this->operation = (string)$requestNode->attributes()->operation;
         $this->buyerCookie = $requestNode->xpath('BuyerCookie')[0];
-        $this->browserFormPostUrl = $requestNode->xpath('BrowserFormPost/URL')[0];
+        $this->browserFormPostUrl = is_array($requestNode->xpath('BrowserFormPost/URL')) ? $requestNode->xpath('BrowserFormPost/URL')[0] : null;
     }
 
     public function getOperation(): ?string

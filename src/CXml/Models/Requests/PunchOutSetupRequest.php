@@ -56,4 +56,3 @@ class PunchOutSetupRequest implements RequestInterface
         return $this;
     }
 }
-ErrorException: Undefined array key 0 in file /Users/mehdi/TeamProcureCloud/vendor/herbert/cxml/src/CXml/Models/Requests/PunchOutSetupRequest.php on line 22

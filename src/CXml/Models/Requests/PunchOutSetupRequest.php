@@ -18,7 +18,9 @@ class PunchOutSetupRequest implements RequestInterface
     {
         $this->operation = (string)$requestNode->attributes()->operation;
         $this->buyerCookie = $requestNode->xpath('BuyerCookie')[0];
-        $this->browserFormPostUrl = is_array($requestNode->xpath('BrowserFormPost/URL')) ? $requestNode->xpath('BrowserFormPost/URL')[0] : null;
+        $this->browserFormPostUrl = count($requestNode->xpath('BrowserFormPost/URL')) 
+            ? $requestNode->xpath('BrowserFormPost/URL')[0] 
+            : null;
     }
 
     public function getOperation(): ?string
@@ -54,3 +56,4 @@ class PunchOutSetupRequest implements RequestInterface
         return $this;
     }
 }
+ErrorException: Undefined array key 0 in file /Users/mehdi/TeamProcureCloud/vendor/herbert/cxml/src/CXml/Models/Requests/PunchOutSetupRequest.php on line 22
